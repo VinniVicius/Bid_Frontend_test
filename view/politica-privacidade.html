@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/bid.ico">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!-- Google Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--AJAX-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="vendor/jquery3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+
+
+    <script src="js/mini-lightbox.min.js"></script>
+    <!--AutoComplete-->
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+    <script>
+
+        MiniLightbox.customClose = function () {
+            var self = this;
+            self.img.classList.add("animated", "fadeOutDown");
+            setTimeout(function () {
+                self.box.classList.add("animated", "fadeOut");
+                setTimeout(function () {
+                    self.box.classList.remove("animated", "fadeOut");
+                    self.img.classList.remove("animated", "fadeOutDown");
+                    self.box.style.display = "none";
+                }, 500);
+            }, 500);
+            return false;
+        };
+
+        MiniLightbox.customOpen = function () {
+            this.box.classList.add("animated", "fadeIn");
+            this.img.classList.add("animated", "fadeInUp");
+        };
+        new MiniLightbox({
+            selector: ".wrapper img"
+            // the common container where the images are appended
+            , delegation: "html"
+        });
+            /*window.onload = function () {
+        MiniLightbox("#first-image");
+        MiniLightbox("#second-image");
+    };*/
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .conteudo p {
+            text-align: justify;
+        }
+
+        img {
+            margin: 20px 30px;
+        }
+
+        .conteudo {
+            margin: 10px 20px;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .col-lg {
+            text-align: justify;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .conteudo {
+                width: 50%;
+                height: 50%;
+                margin: 20px 25%;
+            }
+        }
+    </style>
+    <title>Política de Privacidade</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar topo -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-white m-0">
+            <div class="container-fluid maxWidth">
+                <a href="../index.html" class="navbar-brand">
+                    <img src="img/AF_bid_compras_logo.png" height="75">
+                </a>
+
+                    <!-- Itens da navbar topo -->
+                    <ul class="navbar-nav mx-3 d-flex align-items-center">
+                        <li class="nav-item mx-1">
+                            <a href="../index.html" class="btn btn-outline-warning align-top-items">Voltar</a>
+                        </li>
+                    </ul>
+                    <!--/Itens da navbar topo -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="conteudo">
+        <div class="col">
+            <div class="text-center"><img src="img/logo.png" alt="Logo"></div>
+            <h2 class="title text-center">"Política de Privacidade"</h2>
+            <hr>
+            <div class="row">
+                <p class="lead">
+                    Nessa expressa Política de Privacidade explicamos quais dados de Usuários coletamos no “Site”
+                    BidCompras,
+                    incluindo
+                    seus meios de aplicativos para dispositivos móveis e serviços e ferramentas associados, incluindo o
+                    Chat, e
+                    qual o
+                    tratamento damos a estes dados. Lembrando que o uso do BidCompras está condicionado aos Termos e
+                    Condições
+                    de Uso do
+                    qual esta Política de Privacidade é parte integrante.
+                </p>
+            </div>
+            <div class="row">
+                <h4>1.Aplicabilidade</h4>
+
+                <p>
+                    <span class="text-muted">1.1.</span> Esta Política de Privacidade é destinada à gestão e ao zelo dos
+                    dados fornecidos pelo Usuário na
+                    publicação dos
+                    anúncios, troca de informações no chat, tráfego ou qualquer uso da plataforma BIDCOMPRAS. Em todo
+                    caso, o
+                    BIDCOMPRAS
+                    trabalha orientado e cumprindo a legislação aplicável vigente à proteção de dados. Ao utilizar o
+                    site e suas
+                    aplicações o Usuário está de acordo em compreender, aceitar, cumprir a esta Política de Privacidade
+                    junto ao
+                    Bidcompras e aos Termos de Uso dos serviços prestados pela plataforma. Na discordância, o usuário é
+                    livre
+                    para não
+                    utilizar e se descredenciar ou descadastrar do site e suas aplicações.
+                </p>
+                <p>
+                    <span class="text-muted">1.2.</span> Esta política de privacidade não se aplica à sites, conteúdo ou
+                    acessos de terceiros, ainda que
+                    acessado
+                    a
+                    partir de links dentro do BidCompras ou divulgado nele. Vide Termos e Condições de Uso. Estes
+                    conteúdos
+                    externos
+                    estão fora da gestão e ambientes de hospedagem o que não garante qualquer nívek de segurança e o
+                    conteúdo
+                    destes
+                    acessos. Cabe ao usuário verificar a prévia segurança e suas políticas de acessos.
+                </p>
+            </div>
+            <div class="row">
+                <h4>2. Consentimento do Usuário</h4>
+
+                <p>
+                    <span class="text-muted">2.1.</span> O Usuário, ao utilizar e transmitir dados, informações,
+                    e-mails, contas de perfis de redes sociais,
+                    serviços de
+                    autenticação automática, e outros à plataforma BidCompras, está de acordo com a sua coleta,
+                    armazenamento, e
+                    uso das
+                    informações pessoais fornecidas e suas atualizações, dados de tráfego, endereço de IP, enquanto
+                    participante
+                    de
+                    quizzes, jogos, anúncios promocionais do site ou de terceiros, incluindo empresas terceirizadas de
+                    gerenciamento de
+                    pagamentos online, financiamentos, entregas, atendimento ao cliente entre outros por qualquer
+                    período de
+                    tempo que o
+                    BidCompras entender necessário incluindo dados de publicações de anúncios e chats, considerando as
+                    restrições legais
+                    previstas, até o momento que o Usuário solicitar por via expressa ao site. Adicionalmente O
+                    BIDCOMPRAS pode
+                    receber
+                    e registrar informações, advindos dela própria ou de terceiros., para fins de veiculação
+                    publicitária ou
+                    não, bem
+                    como dados de localização GPS recebidos a partir dos sensores do dispositivo, além de coleta de
+                    dados sobre
+                    publicidade no dispositivo, incluindo cliques efetuados a partir dele, impressões e tempo de
+                    permanência em
+                    publicidade.
+                </p>
+                <p>
+                    <span class="text-muted">2.2.</span> Adiante destes o usuário também está de acordo que em
+                    determinados momentos para quaisquer fins o site
+                    poderá
+                    transmitir estas informações aos seus parceiros, principalmente prestadores de serviços, prováveis
+                    parceiros
+                    comerciais, sócios e afiliados e adicionalmente agregar as informações recebidas legalmente dos
+                    parceiros
+                    nos perfis
+                    de cadastro e bancos de dados.
+                </p>
+                <p>
+                    <span class="text-muted">2.3.</span> Seu endereço IP e outros dados relativos à sua conexão poderão
+                    ser utilizados para personalizar o
+                    serviço e
+                    ajudar a compreender como os usuários utilizam o Site. que poderão ser utilizadas pela nossa
+                    plataforma por
+                    meio de
+                    tecnologias como tags, cookies para acesso rápido e dinâmico, persistentes ou de sessão, pixels,
+                    armazenamento
+                    local, e ferramenta para coleta de informações.
+                </p>
+                <p>
+                    <span class="text-muted">2.4.</span> O usuário também está de acordo em receber notificações e
+                    e-mails sobre anúncios, promoções e conteúdos
+                    especiais enquanto aceitar. O Usuário poderá se desvincular deste recebimento a qualquer momento
+                    acessando
+                    links
+                    indicativos.
+                </p>
+                <p>
+                    <span class="text-muted">2.5.</span> O usuário mesmo que sem prévio cadastro está de acordo em
+                    seguir com as normas de uso e políticas de
+                    privacidade as quais serão atualizadas de tempos em tempos sem a necessidade de adicional aceite
+                    prévio.
+                    Estas
+                    alterações entrarão em vigor imediatamente após inserirmos o novo T&C no Site e suas atualizações,
+                    portanto
+                    cabe a
+                    Você verificar as condições vigentes no momento do uso do Site.
+                </p>
+                <p>
+                    <span class="text-muted">2.6.</span> O Usuário consente estar de acordo que o BidCompras não assume
+                    nenhuma responsabilidade sobre roubo,
+                    perda,
+                    alteração ou uso indevido de suas informações pessoais e dos conteúdos cadastrados e postados via
+                    plataforma.
+                </p>
+                <p>
+                    <span class="text-muted">2.7.</span> O perfil simplificado dos usuários estará disponíveis para
+                    acesso de terceiros para reconhecimento
+                    ou busca de
+                    dados sobre o anunciante e os interessados entre eles como nome, telefone, data de acesso, data de
+                    criação do
+                    usuário, pontuações se pertinentes, links de perfil das redes sociais ou link para acesso à outros
+                    anúncios dos
+                    usuários, todos com consentimento prévio.
+                </p>
+                <p>
+                    <span class="text-muted">2.8.</span> O site BidCompras não tem interesse em utilizar dados dos
+                    usuários para comércio, aluguel e outros
+                    fins
+                    comerciais, para qualquer fim que possa denegrir, agredir, expor ao risco e induzir más condutas por
+                    outros usuários
+                    ou terceiros. Adicionalmente o site está de acordo em sempre cooperar com entidades competentes de
+                    investigação,
+                    policiais e jurídicas para rastreio e alimentar bancos de dados que possam colaborar com
+                    investigações e
+                    rastreio de
+                    condutas ilegais de usuários ou não. Assim o Usuário adicionalmente concorda com esta postura e seus
+                    dados serão
+                    utilizados ou divulgados nestes termos e adicionalmente para se valer dos termos e condições do site
+                    e
+                    mesmo estas
+                    políticas de privacidade, incluindo prevenção de fraudes, alegações de irregularidades, violação de
+                    direitos,
+                    proteger a privacidade e a segurança dos usuários e terceiros.
+                </p>
+            </div>
+            <div class="row">
+                <h4>3. Responsabilidades</h4>
+
+                <p>
+                    <span class="text-muted">3.1.</span> O Usuário está ciente e está de acordo que é de sua
+                    responsabilidade sobre os riscos e conteúdo de
+                    informações
+                    divulgadas através do site, ainda que tenhamos algum filtro e autonomia para bloquear ou excluir
+                    certas
+                    informações
+                    e usuários em desacordo com os termos de uso e política de privacidade, mas ainda assim os usuários
+                    devem utilizar
+                    de cautela principalmente informações pessoais como endereço preciso, contas bancárias e mesmo
+                    telefone.
+                    Perfis de
+                    redes sociais e mesmo a própria conta do BidCompras.
+                </p>
+                <p>
+                    <span class="text-muted">3.2.</span> Adicional cautela está em divulgação de dizeres ofensivos,
+                    antissociais, preconceituosos e outros o
+                    que ainda
+                    está sob responsabilidade da conta cadastrada e sua identidade. Da mesma forma que o BidCompras não
+                    se
+                    responsabiliza por informações, dados e conteúdos pelo usuário divulgado poder ser utilizado,
+                    copiado,
+                    fotografado e
+                    divulgado em demais outros meios que o usuário tornou público. Assim é de responsabilidade do
+                    usuário a
+                    cautela dos
+                    conteúdos divulgados ou compartilhados.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mb-sm-3">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/bidcompras/?eid=ARA9yB6Vv2LPXAHxeLWnMwwP15Z3wm3exEZz5dpD-LTncrez5FAfagJTuMAeWAQ6YE7FTVPyq0CgXqZh" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/bidcompras" target="_blank"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://instagram.com/bidcompras?igshid=1i1wtdzeuhvn6" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-3 mt-sm-3 text-center text-white">
+                    <p>Desenvolvido por: <u><a href="erro.html" class="mrl-1" target="_blank">AgreeCode</a></u>
+                    </p>
+                    <p class="h6">&copy Todos os direitos reservados. <u><a class="ml-1" href="fale-conosco.html">Fale conosco</a></u>
+                    <u><a href="termos.html" class="ml-1">Termos e condições</a></u> 
+                    <u><a href="politica-privacidade.html" class="ml-1">Política de Privacidade</a></u>
+                    <u><a href="erro.html" class="ml-1">FAQ</a></u>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ./Footer -->
+
+</body>
+
+</html>

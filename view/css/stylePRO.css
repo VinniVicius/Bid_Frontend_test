@@ -1,0 +1,789 @@
+/*
+Template Name: BidCompras - site de negociações
+Autor: Giovana Aparecida, Vinicius 
+
+Colors:
+	Body 		: 
+	Headers 	: 
+	Primary 	: 
+	Dark 		: 
+	Grey 		: 
+
+Fonts: Roboto
+
+Table OF Contents
+------------------------------------
+1 > GERAL
+------ Tipografia
+------ Botoes
+------ Inputs
+2 > HEADER
+
+------ vinicius coloca
+
+3 > NAVIGATION
+
+------ vinicius coloca
+
+4 > LOGIN/CADASTRAR/ESQUECEU SENHA
+------------------------------------*/
+
+/*=========================================================
+	01 -> GERAL
+===========================================================*/
+
+/*----------------------------*\
+	Tipografia
+\*----------------------------*/
+html {
+    font-size: 12px; /* Altera o tamanho padrão das fontes */
+  }
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+/*h1, h2, h3, h4, h5, h6{
+
+}*/
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover a:focus{
+    text-decoration: none;
+    transition: all 0.3s;
+}
+ul, ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*----------------------------*\
+	Botoes
+\*----------------------------*/
+.btn-primary{
+    width: 100%;
+    background: #f39c12;
+    margin-bottom: 10px;
+    border: none;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.6s;
+    outline: none;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: #e67e22;
+    opacity: 0.7;
+    transition: 0.6s;
+    outline: none;
+}
+/*----------------------------*\
+	Inputs
+\*----------------------------*/
+
+/*-- Input de texto --*/
+.input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    outline: none;
+}
+textarea.input{
+    padding: 15px;
+    height: 120px;
+    resize: none;
+}
+
+/*-- Input de numeros --*/
+.input-number {
+    position: relative;
+}
+  
+.input-number input[type="number"]::-webkit-inner-spin-button, .input-number input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input-number input[type="number"] {
+    -moz-appearance: textfield;
+    height: 40px;
+    width: 100%;
+    border: 2px solid;
+
+    padding: 0px 35px 0px 15px;
+}
+
+/*-- Input de select --*/
+.input-select {
+    padding: 0px 15px;
+    border: 2px solid;
+    height: 40px;
+}
+
+/*-- Input de radio e checkbox*/
+.radio .checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+.radio .checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.radio:hover .checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.radio .checkbox input:checked ~ .checkmark {
+    background-color: #f39c12;
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio .checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+.checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*-- Input de file --*/
+.file{
+    width: 30%;
+    background: #f39c12;
+    margin-bottom: 10px;
+    border: none;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*=========================================================
+	02 -> HEADER
+===========================================================*/
+
+/*=========================================================
+	03 -> NAVEGAÇÃO
+===========================================================*/
+
+/*=========================================================
+	04 -> LOGIN/CADASTRAR
+===========================================================*/
+
+.form {
+    width: 85%;
+    margin: auto;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    box-shadow: 1px 1px 16px 0px rgba(0, 0, 0, 0.12),
+    1px 1px 16px 0px rgba(0, 0, 0, 0.12),
+    1px 1px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.signup,
+.login {
+    width: 47.7%;
+    background-color: #fff;
+    height: 60px;
+    float: left;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.signup-form,
+.login-form {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 40px;
+    clear: both;
+    width: 90%;
+    height: 400px;
+}
+.log-btns{
+    padding: 20px 10px;
+    display: flex;
+}
+.log-btns a{
+    text-decoration: none;
+    color: white;
+}
+.btn-facebook{
+    display: block;
+    width: 230px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #3b5998;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    border: none;
+    transition: 0.3s;
+    margin: 0 4px;
+}
+.btn-facebook:hover{
+    transition: 0.3s;
+    box-shadow: 1px 1px 5px #54a0ff;
+
+}
+.btn-google{
+    height: 40px;
+}
+.input-form{
+    margin-bottom: 25px;
+}
+.input-form:focus{
+    border: 1px solid #f39c12;
+}
+.before-input{
+    margin-bottom: 0;
+}
+.erro{
+    color: #e74c3c;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+.animation{
+    animation: nope 100ms linear;
+    animation-iteration-count: 2;
+}
+#box{
+    width: 500px;
+    overflow-y: hidden;
+    background: #f1f1f1;
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    padding: 10px;
+    text-align: center;
+    display: none;
+}
+.fecha{
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #f39c12;
+    display: inline-block;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes nope{
+    0%, 100%{
+        transform: translateX(0);
+    }
+    35%{
+        transform: translateX(-10%);
+    }
+    70%{
+        transform: translateX(10%);
+    }
+}
+@media only screen and (min-width:600px) {
+    .log-btns{
+        padding: 20px 90px;
+        display: flex;
+    }
+    .btn-facebook{
+        margin: 0 20px;
+    }
+    .form {
+        width: 70%;
+        margin: 30% auto;
+    }
+    .signup,
+    .login {
+        width: 48.6%;
+        background-color: #fff;
+        height: 60px;
+        float: left;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+}
+@media only screen and (min-width:1000px){
+    .log-btns{
+        padding: 20px 170px;
+        display: flex;
+    }
+    .btn-facebook{
+        margin: 0 10px;
+    }
+    .signup,
+    .login {
+        width: 49.01%;
+        background-color: #fff;
+        height: 60px;
+        float: left;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+}
+@media only screen and (min-width:1200px) {
+    .log-btns{
+        padding: 20px 80px;
+        display: flex;
+    }
+    .btn-facebook{
+        margin: 0 10px;
+    }
+    .form {
+        width: 40%;
+        margin: 7% auto;
+    }
+    .signup,
+    .login {
+        width: 48.7%;
+        background-color: #fff;
+        height: 60px;
+        float: left;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+}
+/*=========================================================
+	05 -> ESQUECEU-SENHA
+===========================================================*/
+.form h1{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+    color: black;
+}
+.fundo{
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px 20px;
+    clear: both;
+    height: 280px;
+}
+.fundo input{
+    margin: 30px 0;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+
+}
+/*=========================================================
+	06 -> PACOTES
+===========================================================*/
+.pricing-table{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.pricing-table h1{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: #fff;
+}
+.pricing-table h1::after{
+    content: '';
+    background: #fff;
+    display: block;
+    height: 3px;
+    width: 200px;
+    margin: 15px auto;
+}
+.col{
+    flex: 25%;
+    padding: 10px;
+    max-width: 320px;
+    box-sizing: border-box;
+}
+.table{
+    height: 100%;
+    background: #fff;
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #00000070;
+}
+.table h2{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.table ul li{
+    padding: 10px 0;
+}
+
+.table a{
+    text-decoration: none;
+    color: #f39c12;
+    border: 2px solid #f39c12;
+    display: block;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s linear;
+}
+.table a:hover{
+    background: #f39c12;
+    color: #fff;
+}
+.price{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.price span{
+    display: block;
+    font-size: 20px;
+}
+.pop{
+    background: #f39c12;
+    color: #fff;
+    transform: rotate(45deg);
+    padding: 10px 40px;
+    position: absolute;
+    top: 10px;
+    right: -34px;
+}
+@media screen and (max-width: 980px){
+    .col{
+        flex: 50%;
+    }
+}
+@media screen and (max-width: 700px){
+    .col{
+        flex: 100%;
+    }
+}
+/*=========================================================
+	07 -> CHAT
+===========================================================*/
+.container-chat{
+    border: solid 1px #c2c2c2; 
+    margin: 0px auto; 
+    width: 100%; 
+    max-width: 98%;
+    background: #fff;
+    padding: 0;
+}
+@media (max-width: 768px){
+    .container-chat{
+        border: solid 1px #c2c2c2; 
+        margin: auto; 
+        width: auto; 
+        max-width: auto;
+        background: #fff;
+        padding: 0;
+    }
+}
+.profile-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+.settings-tray{
+    border-bottom: solid 1px #c2c2c2;
+    background: #eee;
+    padding: 10px 15px;
+}
+.settings-tray i{
+    margin-top: 10px;
+    font-size: 25px;
+    color: gray;
+    margin-left: 14px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.settings-tray i:hover{
+    color: #0984e3;
+}
+.input-wapper{
+    background: #fff;
+    border-radius: 40px;
+}
+.input-wapper i{
+    color: gray;
+    vertical-align: middle;
+    margin-left: 7px;
+}
+.input-chat{
+    border: none;
+    border-radius: 40px;
+    width: 80%;
+}
+.input-chat::placeholder{
+    color: #e3e3e3;
+    font-weight: 300;
+}
+.input-chat:focus{
+    outline: none;
+}
+.friend-drawer{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    vertical-align: baseline;
+    transition: .3s ease;
+}
+.friends-drawer{
+    
+    padding: -1px;
+    display: flex;
+    vertical-align: baseline;
+}
+.text{
+    margin-left: 12px;
+    width: 70%;
+}
+.text h6, h4{
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+.text p{
+    color: gray;
+    margin: 0;
+}
+.time{
+    color: gray;
+}
+.onhover:hover{
+    background: #e67e22;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.onhover:hover h6{
+    color: #fff;
+}
+.onhover:hover p{
+    color: #fff;
+}
+.onhover:hover .time{
+    color: #fff;
+}
+.contact{
+    width:100%; 
+    max-width:100%; 
+    padding: 0px;
+    height: 550px; 
+    overflow-y: scroll;
+    background: #fff;
+    
+}
+.contact a{
+    text-decoration: none;
+}
+.contact li{
+    border-bottom: solid 1px #c2c2c2; 
+    list-style: none;
+}
+.msg-container{
+    height: 475px; 
+    width: 100%; 
+    overflow-y: scroll; 
+    overflow-x: hidden; 
+    background: white
+}
+.chat-ballon-left{
+    padding: 10px;
+    background: #eee;
+    margin: 10px 1%;
+    position: relative;
+    border-radius: 9px;
+}
+.chat-ballon-left::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom: 0;
+    margin-top: -10px;
+    left: 0;
+    border-right-color: #eee;
+    border-left: 0;
+    margin-left: -20px;
+}
+.chat-ballon-right{
+    padding: 10px;
+    color: white;
+    margin: 10px 1%;
+    position: relative;
+    border-radius: 9px;
+}
+.chat-ballon-right::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom: 0;
+    margin-top: -20px;
+    right: 0;
+    border-left-color: #6699ff;
+    border-right: 0;
+    margin-right: -30px;
+}
+.chat-box-input{
+    background: #eee;
+    width: 100%;
+    height: 25px;
+}
+.chat-box-tray{
+    border-bottom: solid 1px #c2c2c2;
+    background: #eee;
+    display: flex;
+    align-items: baseline;
+    padding: 10px 15px;
+    margin-top: 19px;
+    width: 100%;
+}
+.chat-box-tray input{
+    margin: 0 10px;
+    padding: 6px 2px;
+}
+.chat-box-tray i{
+    color: grey;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.left-icon{
+    margin-left: 30px;
+}
+@media screen and (max-width: 375px){
+    .container-chat{
+        max-width: 100%;
+        margin: 30px 10px;
+        background: #fff;
+        padding: 0;
+        height:460px;
+    }
+    .contact{
+        width: 100%; 
+        height:460px;
+        overflow-y: scroll;
+        background: #fff;
+        padding: 20px 43px;
+    }
+}
+/*=========================================================
+	08 -> FALE CONOSCO
+===========================================================*/
+.contact-section{
+    padding: 10px 0;
+}
+.contact-section h3{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: black;
+}
+.contact-section h1::after{
+    content: '';
+    background: black;
+    display: block;
+    height: 3px;
+    width: 200px;
+    margin: 15px auto;
+}
+.contact-form{
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+    height: 350px;
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.12),
+    1px 1px 10px 0px rgba(0, 0, 0, 0.12),
+    1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.contact-form-text{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+}

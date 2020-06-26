@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(to right, #57c1eb 10%, #246fa8 100%);
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+.container{
+    width: 70%;
+    margin: 2% 18%;
+}
+.form{
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 40px;
+    clear: both;
+    width: 100%;
+    height: 550px;
+}
+
+.title{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+.input{
+    width: 50%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 2px solid;
+    font-size: 14px;
+    outline: none;
+}
+select.input{
+    border-radius: 5px;
+    width: 100%;
+    padding: 8px;
+}
+textarea.input{
+    padding: 15px;
+    min-height: 90px;
+    resize: none;
+}
+
+.file{
+    width: 100%;
+    background: #f39c12;
+    margin-bottom: 10px;
+    border: none;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.check {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+.check:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.check input:checked ~ .checkmark {
+    background-color: #f39c12;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.check input:checked ~ .checkmark:after {
+    display: block;
+}
+.check .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 2px;
+    height: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.submit{
+    width: 50%;
+    background: #f39c12;
+    margin-bottom: 10px;
+    border: none;
+    height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.linha{
+    margin: -39% 20%;
+}
+.linha2{
+    margin: -20% 9%;
+}

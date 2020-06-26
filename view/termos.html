@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/bid.ico">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Google Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--AJAX-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="vendor/jquery3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+
+
+    <script src="js/mini-lightbox.min.js"></script>
+    <!--AutoComplete-->
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+    <script>
+
+        MiniLightbox.customClose = function () {
+            var self = this;
+            self.img.classList.add("animated", "fadeOutDown");
+            setTimeout(function () {
+                self.box.classList.add("animated", "fadeOut");
+                setTimeout(function () {
+                    self.box.classList.remove("animated", "fadeOut");
+                    self.img.classList.remove("animated", "fadeOutDown");
+                    self.box.style.display = "none";
+                }, 500);
+            }, 500);
+            return false;
+        };
+
+        MiniLightbox.customOpen = function () {
+            this.box.classList.add("animated", "fadeIn");
+            this.img.classList.add("animated", "fadeInUp");
+        };
+        new MiniLightbox({
+            selector: ".wrapper img"
+            // the common container where the images are appended
+            , delegation: "html"
+        });
+            /*window.onload = function () {
+    MiniLightbox("#first-image");
+    MiniLightbox("#second-image");
+};*/
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .conteudo p {
+            text-align: justify;
+        }
+
+        img {
+            margin: 20px 30px;
+        }
+
+        .conteudo {
+            margin: 10px 20px;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .col-lg {
+            text-align: justify;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .conteudo{
+                width: 50%;
+                height: 50%;
+                margin: 20px 25%;
+            }
+        }
+    </style>
+    <title>Termos de Uso</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar topo -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-white m-0">
+            <div class="container-fluid maxWidth">
+                <a href="../index.html" class="navbar-brand">
+                    <img src="img/AF_bid_compras_logo.png" height="75">
+                </a>
+
+                    <!-- Itens da navbar topo -->
+                    <ul class="navbar-nav mx-3 d-flex align-items-center">
+                        <li class="nav-item mx-1">
+                            <a href="../index.html" class="btn btn-outline-warning align-top-items">Voltar</a>
+                        </li>
+                    </ul>
+                    <!--/Itens da navbar topo -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="conteudo">
+        <div class="col">
+            <div class="text-center"><img src="img/logo.png" alt="Logo"></div>
+            <h2 class="title text-center">"Termos e Condições"</h2>
+            <hr>
+            <h5>Aspectos Introdutórios</h5>
+            <p>Seja bem-vindo! Antes de utilizar O BIDCOMPRAS, por gentileza, leia atentamente os presentes Termos e
+                Condições Gerais de Uso (“T&C”) pois esta leitura é importante tanto para você usuário, nós do
+                Bidcompras
+                ME. (“BIDCOMPRAS”), bem como de terceiros, somente assim podemos garantir o melhor uso das
+                funcionalidades
+                do site e sua melhor usabilidade e suas legalidade.</p>
+            <strong> breve introdução aos T&C que regem o funcionamento e as práticas no BidCompras:</strong>
+            <div class="col-lg"><strong>1.</strong> Estes T&C se consitui um contrato aceito por você usuário no momento
+                que faz o uso e/ou o cadastro do portal indiferente de formas de aceitação no momento do cadastro e deve
+                estar ciente de que algumas ferramentas estão sujeitas a condições particulares de uso os quais são
+                regulados por meio deste contrato, memorando, orientação.</div>
+
+            <div class="w-100"></div>
+
+            <div class="col-lg"><strong>2.</strong> No uso das ferramentas e o próprio acesso ao portal você deve
+                obedecer às leis vigentes do país, a moral, a ordem pública, as melhores práticas e costumes e estes
+                T&C, não desviando assim das condutas irregulares incluindo publicação de anúncios contrários à estes.
+            </div>
+
+            <div class="col-lg"><strong>3.</strong> Estão reservados os direitos de propriedade intelectual do
+                BidCompras e de terceiros e autoriza o BidCompras a usar, para devidos fins que o BidCompras entender
+                pertinentes como imagens, fotos e demais conteúdos fornecidos por você informados ao portal do
+                BidCompras.</div>
+
+            <div class="col-lg"><strong>4.</strong> O BidCompras não se responsabiliza pelo danos, falhas, golpes, más
+                negociações ou qualquer demais insatisfações das relações conduzidas pelos usuários ou terceiros no
+                espaço fornecido e suas funcionalidades, nem pelos conteúdos, produtos e os serviços oferecidos. O
+                entendimento é que o portal se restringe somente em disponibilizar o espaço, divulgar e conectar pessoas
+                com interesses comuns.</div>
+
+            <div class="col-lg"><strong>5.</strong> Você aceita a Política de Privacidade do BIDCOMPRAS, que integra
+                estes T&C.</div>
+
+            <div class="col-lg"><strong>6.</strong> Voce ainda é responsável por todos os atos praticados por você neste
+                ambiente informatizado, pela veracidade das informações fornecidas, seja por questão dos registros das
+                informações de cadastro ou seja pelas informações repassadas no ato de negociar além de estar atento às
+                Regras para Anúncios que integram estes T&C.</div>
+
+            <div class="col-lg"><strong>7.</strong> O BIDCOMPRAS se reserva o direito de recusar, bloquear, inabilitar
+                ou excluir, a seu exclusivo critério, Usuários que descumpram qualquer uma das disposições presentes
+                nestes Termos e Condições ou outros instrumentos que os integram.</div>
+
+            <div class="w-100"></div>
+            Quaiquer dúvidas entre em contato conosco no contate-nos
+            <h5 class="mt-3">PARTES E OBJETO.</h5>
+            <div class="col-lg">
+
+                •Estes Termos e Condições (“T&C”) são um contrato entre você (“Você” ou “Usuário”) e o BidCompras ME.,
+                inscrita no CNPJ/MF sob o nº XXXXXXXXXXXXX, com sede na cidade (“BIDCOMPRAS”), para regular o uso que
+                Você fará do portal de internet BIDCOMPRAS (http://www.BIDCOMPRAS.com.br) e todos os websites
+                pertencentes ao BIDCOMPRAS (denominados conjuntamente como “SITE”), além das regras de algumas
+                funcionalidades específicas que serão tratadas neste.
+            </div>
+            <h5 class="mt-3">CONDIÇÕES GERAIS DE ACESSO, CADASTRO E USO DO SITE.</h5>
+            <div class="col-lg">
+                Aceite: Através deste você reconhece e concorda com a compreensão, aceite e vinculação automática aos
+                termos deste T&C indiferente de quaisquer outros pareceres ou processos de aceite. Como o uso implica a
+                faculdade e seu livre arbítrio, o não aceite torna o uso por Você não compatível com as regras do site e
+                aconselhamos que cesse a utilização.
+
+                Responsabilidade: É reconhecido por Você através do aceite de que o uso das ferramentas e o próprio
+                acesso ao portal você deve obedecer às leis vigentes do país, a moral, a ordem pública, as melhores
+                práticas e costumes e estes T&C, não desviando assim das condutas irregulares incluindo publicação de
+                anúncios contrários à estes e assim Você se torna totalmente é responsável por sua conta e risco da
+                prática de atividades e comportamentos ilícitos, imorais, que atentem contra terceiros física ou
+                moralmente além de seus direitos.
+            </div>
+
+            <div class="col-lg m-0 p-0 mt-3">
+                <strong>Vedações:</strong> É vedado transmitir, difundir, veicular, disponibilizar ou introduzir
+                materiais ou informações que estejam em desacordo com à legislação vigente, à moral e à ordem pública,
+                aos T&C, às políticas de uso do BibCompras e às condições particulares em quaisquer circunstâncias como:
+                <div class="col-lg">- material obsceno, ofensivo, abusivo, pornográfico, materiais de apologia ao tema
+                    terrorismo em todas suas formas de manifestação; </div>
+                <div class="col-lg">- qualquer tipo de violência e suas formas de manifestação, discriminação de
+                    qualquer natureza ou qualquer infringimento aos direitos em especial mas não limitado aos direitos
+                    fundamentais, humanos, dos animais, criança e do adolescente, da liberdade e aos tratados
+                    internacionais que o país seja signatário; </div>
+                <div class="col-lg">- qualquer tipo de ataque hacker ou qualquer software e sites nocivos aos sistemas
+                    do BidCompras, ao de usuários e de terceiros; </div>
+                <div class="col-lg">- publicidade ilícita ou desleal de qualquer natureza ainda que constitua dano ou
+                    ofença ou não;</div>
+                <div class="col-lg">- publicidade não solicitada, não autorizada, “spam”,”lixo eletrônico”, “correntes”,
+                    noticias falsas; informações ambíguas, inexato, omissão de informações relevantes sobre os temas
+                    comerciais tratados, indução ao erro de usuários, compradores ou vendedores, marketing de pirâmide
+                    exceto em casos específicos autorizados por políticas internas do BidCompras nos casos específicos à
+                    tratar;</div>
+                <div class="col-lg">- divulgar informações que infrinjam direitos autorais de qualquer propriedade,
+                    sigilo das comunicações e à privacidade de qualquer possuidor;</div>
+            </div>
+
+            <div class="mt-3"><strong>ANÚNCIOS.</strong></div>
+            <div class="col-lg">
+                <div class="col-lg"><strong>Regras:</strong> O BidCompras apresentam regras que precisam ser observadas
+                    e seguidas pelos usuários quando publicar anúncios ou participar de uma negociação, as quais são
+                    atualizadas frequentimente para a melhor experiência do usuário. </div>
+                <div class="w-100"></div>
+                <div class="col-lg"><strong>Direitos:</strong> O BidCompras, atento e condicionado indubitavelmente às
+                    regras e normas dos Direitos do Consumidor, reserva o seu direito de exercer sobre sua plataforma
+                    disponibilizada ao usuário qualquer ação e decisão sobre a legalidade ou restrições de usos dos
+                    anúncios e poderá remover à seu exclusivo critério e ou usuários e anúncios que estiverem em
+                    desacordo com as políticas e interesses particulares da plataforma em quaisquer meio(s)
+                    difundido(s).</div>
+                <div class="w-100"></div>
+                <div class="col-lg"><strong>Período de disponibilidade:</strong> Os espaços de anúncios são
+                    disponibilizados por períodos determinados ou não dependendo da categoria ou interesse do site de
+                    remover ou manter os anúncios, atendando sempre aos prazos mínimos pré-estipulados nos T&C a expor e
+                    ainda não se obriga a disponibilizar históricos ou backup de qualquer natureza para os usuários,
+                    incluindo os disponibilizados pelo próprio BidCompras por qualquer motivo;</div>
+                <div class="w-100"></div>
+                <div class="col-lg"><strong>Responsabilidade de sua Conta:</strong> Em se cadastrar no site Você se
+                    torna responsável pela veracidade das informações passadas e também pelas atualizações pertinentes;
+                </div>
+                <div class="w-100"></div>
+                <div class="col-lg"><strong>Proteja sua conta:</strong> Nunca divulgue ou repasse suas informações
+                    pessoais ou senhas para terceiros ou as mantenha anotadas de forma suscetível ao risco de desvio e
+                    exposto à posse de terceiros, já que toda informação divulgada ou difundida no seu perfil ou conta
+                    são na sua totalidade de sua responsabilidade.</div>
+                <div class="w-100"></div>
+                <div class="col-lg"><strong>Responsabilidades e Negociação:</strong> Quando publicar um anúncio ou
+                    participar de uma negociação Você assume ter real interesse em buscar informações sobre o produto ou
+                    serviço procurado e que tem total conhecimento da destinação e uso dos equipamentos, materiais e
+                    serviços à serem adquiridos estando assim sempre responsável pela clara negociação e condições
+                    necessárias totais para o enquadramento de suas reais necessidades e totais capacidades de assumir
+                    as condições na finalização da negociação além da capacidade legal e autonomia para tal transação e
+                    negociação, assumindo assim além das responsabilidade de zelar pela palavra assumida na negociação
+                    total responsabilidade pelos termos acordados e que segue condições de responsabilidades fiscal,
+                    legal e administrativas condizentes com a realidade do país e suas transações comerciais e
+                    financeiras como leis, regras, ética e moral antidumping, antitruste, ampla concorrência entre
+                    outros. </div>
+                <div class="w-100"></div>
+                <div class="col-lg"><strong>Procedência e Licitude do Produto:</strong> Você declara que os produtos
+                    vendidos e comprados são de origens lícitas, que não estejam em desacordo com as leis do país,
+                    estado ou município, que não violem direitos de terceiros, de propriedade, de pessoa, de entidade,
+                    de publicação e privacidade, de menores e adolescentes, dos consumidores, as leis brasileiras
+                    vigentes e que respeitem a ética, a moral e os bons costumes incluindo mas não únicas as de caráter
+                    difamatórias, vexatórias, discriminantes e violentas em todas as suas formas de manifestação.
+                    Como já mencionado o BidCompras resguarda o seu direito de manipular as informações contidas na sua
+                    plataforma para mitigar e zelar pelas condutas do seus usuários e informações por nós mesmo ou por
+                    eles expostas, então, Você concorda que seu anúncio ou seu perfil de usuário e conta podem ser
+                    temporária ou permanentemente excluídas da nossa plataforma em quaisquer de suas formas de existir e
+                    assim Você reconhece e assume a responsabilidade de certificar-se da origem, procedência, licitude e
+                    validade relacionadas aos produtos ou serviços ofertados também de sua compatibilidade com estes T&C
+                    e demais políticas aplicáveis além de assumir total responsabilidade por estas legalidades frente às
+                    autoridades do país.</div>
+
+
+
+                <div class="col-lg"><strong>Exatidão das Informações:</strong> Você declara e assume a veracidade das
+                    informações e que passará de forma clara e precisa sobre o produto e serviço ofertado ou interessado
+                    nas suas mais claras não limitados às definições técnicas e especificações, condição e estado dos
+                    ofertados, formas de pagamentos e encargos envolvidos, se for o caso seu Incoterm,
+
+                    Obrigando-os a atualizar prontamente todos os dados e informações bem como ao comprometimento a não
+                    cobrar pelo envio de informações sobre os anúncios, além de não veiculação de informações inexatas,
+                    inverídicas, propaganda enganosa ou abusiva ou que possa induzir o outro ao erro se
+                    responsabilizando legalmente pelo ato lesivo ou qualquer dano causado. Utilize a plataforma para
+                    disponibilizar imagens para exemplificar ou demonstrar com maior acurácia possível as informações
+                    prestadas e aos termos cordados nas negociações pelo zelo e mitigação dos mal entendidos para que as
+                    negociações fluam de forma amigável e proveitosa na sua melhor maneira de expressão e condução a fim
+                    de firmar parcerias e aproximações frutíferas e saudáveis</div>
+
+                <div class="col-lg"><strong>Limites e cobrança:</strong> Em termos gerais no site do BidCompras o
+                    anunciante pode cadastrar anúncios e comunicar com outros anunciantes de forma gratuita havendo a
+                    possibilidade de cobranças em determinadas áreas determinadas do site, o que será previamente
+                    informado ao usuário, além daquelas de anúncios ou contas especiais de destaque, ainda à ser tratado
+                    por estes T&C.
+
+                    Não obstante deste, o BidCompras informa que não cobra taxas ou quer espécie de comissão ou
+                    participação de qualquer espécie nas negociações tratadas entre anunciantes e usuários nas suas
+                    negociações.</div>
+
+                <div class="col-lg"><strong>Validação:</strong> O BidCompras reserva, a seu critério, validar as
+                    informações de seus usuários e suas postagens afim de garantir o melhor e mais saudável das relações
+                    comerciais e exposições dos conteúdos, assim proteger demais usuários de qualquer ameaça aparente ou
+                    não e suas peculiaridades e garantir um ambiente favorável aos negócios e suas interações, além de
+                    garantir atendimento das regras, termos e condições da plataforma.
+
+                    Ainda assim estas verificações, validações não garante aos usuários, e nem se obriga a, a veracidade
+                    das informações e anúncios, que serão sempre de responsabilidade de cada usuário e sua conta.</div>
+            </div>
+            <h5 class="mt-3">POLÍTICA DE PRIVACIDADE.</h5>
+
+            <div class="col-lg"><strong>Privacidade.</strong> o BidCompras possui política expressa sobre privacidade
+                dos dados. As definições desta política estão expressas no documento “Políticas de Privacidade” que é
+                parte integrante e indissociável deste T&C e deverão ser lidas e compreendidas por todos os usuários
+                anteriormente às suas investidas através da plataforma.</div>
+
+            <div class="col-lg"><strong>Cessão de dados.</strong> O Usuário reconhece e concorda através do aceite
+                eletrônico deste que a informação cedida ao site, para quaisquer finalidades do BidCompras, poderá ser
+                cedida à terceiros para fins de simples continuidade dos serviços prestados pelo BidCompras.</div>
+
+            <h5 class="mt-3">GARANTIAS E RESPONSABILIDADE</h5>
+
+            <div class="col-lg"><strong>Disponibilidade de Nosso Atendimento.</strong> O BidCompras não garante ao
+                usuário disponibilidade total e irrestrita à plataforma em todos os seus meios de existência e
+                funcionalidades e também não se responsabiliza por qualquer dano ou prejuízo causado por estas
+                indisponibilidades, seja por motivos internos da companhia ou externos, os que tange à capacidade de
+                acesso do usuário ao portal BidCompras, ou por motivos de terceiros, os prestadores de serviços da
+                companhia e qualquer outro tipo de suporte, ainda que por falhas técnicas ou por motivos de força maior.
+            </div>
+
+            <div class="col-lg"><strong>SITE Não Livre de Vírus.</strong> Ainda que a plataforma do BidCompras está
+                embasada nos termos destes T&C no qual expressamente declara-se que não aceita e busca incessantemente o
+                varrimento para o bloqueio e ou exclusão de ameaças cibernéticas, de qualquer natureza, à seus usuários
+                e suas interações, o portal não garante a isenção ou ausência de vírus e qualquer outro tipo de ameaças
+                eletrônica e não se responsabiliza por qualquer dano causado aos usuários sejam por alterações de
+                sistemas, pequenas falhas ou completa destruição de equipamentos eletrônicos, documentos e arquivos de
+                qualquer espécie, mesmo ainda </div>
+
+            <div class="col-lg"><strong>Links Externos.</strong> O BidCompras ou seus usuários em suas interações
+                poderão disponibilizar websites de terceiros via endereços eletrônicos externos propositalmente ou não,
+                de má fé ou outras ações via ataques cibernéticos, e entende e aceita que a utilização dos serviços e
+                seus conteúdos e ainda o acesso à estes ambientes externos através do BidCompras são de completa e
+                exclusiva conta, risco e risco e isenta o BidCompras de qualquer responsabilidade e de qualquer natureza
+                relativa aos websites e conteúdos acessados por estes endereços eletrônicos.</div>
+
+            <div class="col-lg"><strong>Permissão.</strong> Para seus devidos fins, e exclusos a necessidade de expor
+                seus motivos, o BidCompras reserva o direito, e o contratante o permite, introduzir novas ferramentas,
+                serviços e demais modificações de qualquer natureza no site e em suas funcionalidades.
+
+                Outra necessidade é a de no caso de o site BidCompras se reservar de guardar em memórias, cópias de
+                páginas pelo usuário acessada para a única finalidade de melhorar os acessos e velocidade de respostas
+                das interatividades e funções do site, além de quaisquer outros tipos de registro que o site se propõe a
+                manter arquivo para diversos fins, resguardando direitos do usuário e sem prejuízo de outras
+                possibilidades reservadas à BIDCOMPRAS nos termos da Política de Privacidade.</div>
+
+            <div class="col-lg"><strong>Conteúdo, Informações e Serviços de Terceiros.</strong> O BidCompras não garante
+                aos usuários e não se responsabiliza pela veracidade, exatidão, atualidade e licitude das informações
+                divulgadas ou difundidas através do site, incluindo produtos e serviço de terceiros além de seus danos e
+                prejuízos resultantes da utilização, contratação, compra e venda dos produtos e serviços apresentados,
+                difundidos ou divulgados no ou pelo site.
+
+                Contratação com Terceiros através do BidCompras.</strong> O usuário reconhece e aceita que o BidCompras
+                não assume qualquer responsabilidade por qualquer contato, contrato, ato jurídico, relações contratuais,
+                negociações ou qualquer demais abordagens e relacionamentos que possam vir a ser firmados através do
+                Site bem como participações em concursos, promoções, anúncios, compra ou venda de qualquer bem ou
+                serviços e serão consideradas como única e exclusivamente relações entre comprador e vendedor, ambos
+                usuários da plataforma que se responsabilizam inteiramente por estas interações e ou condições jurídicas
+                firmadas. Assim é expressa e reconhecidas condições que o BidCompras não tem responsabilidade por danos
+                ou prejuízos de qualquer natureza ocasionados em razão destas relações.</div>
+
+            <div class="col-lg"><strong>Conduta de Usuário.</strong> O BidCompras não assegura de que os Usuários
+                utilizam a plataforma em conformidade com as leis, a ordem pública, a moral e os bons costumes, além de
+                que é feito rastreamento de quaisquer desvios de conduta, segundo os T&C, e também não garante a
+                veracidade, exatidão, esgotamento ou autenticidade das informações, conteúdos, opiniões e manifestações
+                difundidas através do site assim não sendo responsável por qualquer infração desse usuário ou terceiros
+                que se comuniquem através do BidCompras, nem mesmo as falsas identidades. O mau uso e risco é de
+                exclusiva responsabilidade dos usuários.</div>
+
+            <div class="col-lg"><strong>Desvinculação.</strong> O BidCompras não atua como prestador de serviços para os
+                usuários da intermediação de negócios nem presta qualquer consultoria, desta forma, o site atua apenas
+                disponibilizando espaços para facilitar o contato e a aproximação de potenciais negócios entre
+                compradores e vendedores de produtos e serviços, assim o site não se responsabiliza por danos ou
+                prejuízos advindos das negociações ou informações trocadas, nem por atos ou omissões entre os usuários ,
+                erros, fraudes, imprecisões e devidos resultados das interações entre os usuários ou formas de utilizar
+                as ferramentas do Site. Da mesma forma qualquer direcionamento para outros endereços eletrônicos ou
+                convites diversos também não são de responsabilidade do BidCompras estando assim os usuários e suas
+                interações integralmente responsáveis por estas atividades, assim qualquer dano ou prejuízo advindo
+                desta maneira ou ação legal que venha ser necessária deverão ser direcionados integralmente aos usuários
+                geradores do dano ou prejuízo ou demais reclamações.
+
+                Adicionalmente o site não disponibiliza históricos de conversas e demais interações nem mantém arquivos
+                para futuros acessos e consultas, desta forma, os usuários do portal estão integralmente cientes que
+                estas demandas serão de inteira responsabilidade dos solicitantes. Assim qualquer histórico deve ser
+                mantido em posse dos interessados de qualquer maneira lhe entender conveniente.</div>
+
+            <div class="col-lg"><strong>Responsabilidades.</strong> Uma vez que o site não possui gestão sobre os
+                anúncios veiculados no que diz respeito aos conteúdos ou ofertas divulgadas por este meio, ele se torna
+                incapaz de garantir a veracidade, utilidade, precisão, licitude, legalidade, segurança e conteúdos
+                veiculados, nem autenticidade, segurança, licitude dos produtos e serviços ofertados, assim não se
+                responsabiliza por danos, perdas, prejuízos decorrentes ou relacionados direta ou indiretamente nem a
+                terceiros resultado das negociações e ou operações promovidos e ou divulgadas através do BidCompras.
+                Eventuais perdas e danos incorridos na plataforma, os usuários se responsabilizam, ou o comprador ou o
+                vendedor, pelas falhas ocorridas que geraram tais danos, incluindo, mas não limitado a danos diretos e
+                indiretos, materiais, morais, lucros cessantes, infrações de qualquer natureza legal, tributária, honra,
+                propriedades intelectuais, de imagem ou materiais.
+
+                Você ainda concorda e reconhece que enquanto negociando ou utilizando o site para comprar ou vender
+                produtos e serviços ou qualquer interesse fim de divulgação de seu interesse foi realizada de forma
+                livre e espontânea, consciente e voluntária através de qualquer maneira de contato via operacionalidades
+                do site entre usuários e ou meros visualizadores, portanto Você se torna único e integralmente
+                responsável pela referida compra, venda ou divulgação e se compromete em honrar os termos comprometidos
+                sem interferência, consulta ou indicações do BidCompras conforme conscientemente negociou e se
+                comprometeu. Assim antes de finalizar todas as confirmações se certifique que está de integral acordo
+                sobre as condições de pagamento ou recebimento de valores ou trocas e também pela real condição do
+                produto ou serviço adquirido ou entregue ou prestado se resguardando da veracidade, origem, procedência
+                dos produtos, serviços e informações por sua conta e risco e da conveniência de prosseguir com a
+                transação. </div>
+
+            <div class="col-lg"><strong>6.9.1. Propriedade e Sucesso das Negociações:</strong> O BidCompras não garante
+                a finalização de compra e venda, sua conclusão ou qualquer condições vinculados ao processo de compra e
+                venda dos produtos ou serviços anunciados. Ainda, o site não tem posse dos itens ou dos serviços
+                prestados oferecidos nos anúncios nem propriedade destes nem intervém nas definições das condições de
+                compras e vendas. Assim o site não assume qualquer responsabilidade em razão das compras ou vendas
+                realizadas pelos usuários, das informações e seus conteúdos </div>
+
+            <div class="col-lg"><strong>6.9.2. Responsabilidade Tributária.</strong> Os Usuários são integralmente
+                responsáveis por obrigações tributárias advindas do processo de compra e venda. O site preza pela
+                legalidade das operações, mas não se responsabiliza pelo cumprimento das normas tributárias corrente
+                sendo os Usuários compradores e vendedores cientes do cumprimento de suas obrigações nas transações
+                comerciais indiferente o produto o serviço.</div>
+
+            <div class="col-lg"><strong>6.9.3. Responsabilidade do BidCompras.</strong> Dentro das normas estabelecidas
+                pela lei o BidCompras se limita por toda interação de prestação de serviço do site para seus usuários e
+                seus serviços prestados diretamente relacionados às atividades exercidas em seu favor, excluindo-se os
+                danos indiretos e lucros cessantes.</div>
+
+            <h5 class="mt-3">PROPRIEDADE INTELECTUAL.</h5>
+
+            <div class="col-lg"><strong>Proteções.</strong> O usuário reconhece que estão protegidos por direitos de
+                propriedade intelectual os elementos do site e suas ferramentas, as informações e conteúdos nele
+                inseridos, das estruturas, filtros e seleções, ordenações e apresentações do conteúdo do site e das
+                programações e demais aplicativos utilizados pelo portal.</div>
+
+            <div class="col-lg"><strong>Vedações.</strong> O usuário não está autorizado a realizar web crawling no
+                portal, “Bot”, “robô”, “robot”, “crawler”, afim de copiar, mapear, planilhar, modificar, exibir,
+                divulgar, utilizar, desmontar, remontar, distribuir, alugar, fornecer, vender, disponibilizar por
+                qualquer meio ou finalidade qualquer elemento ou elementos referidos no parágrafo anterior ou índice
+                8.1.</div>
+
+            <div class="col-lg"><strong>Proibido.</strong> Fica determinado proibida a utilização de texto, imagens,
+                anúncios e qualquer outro elemento incluído ou disponível no BidCompras para qualquer outro fim de
+                utilização total ou parcial e em qualquer meio de veículo de comunicação e divulgação sem a expressa e
+                inequívoca autorização prévia e por escrito do BidCompras, nem os de mera aparência nem a cópia ou
+                dispositivos técnicos integralmente ou manipulados estabelecidos pelo BidCompras mesmo via terceiros.
+            </div>
+
+            <div class="col-lg"><strong>Autorizações.</strong> Está estipulado, reconhecido e autorizado a partir destes
+                T&C que Voce autoriza o BidCompras a divulgar, utilizar, distribuir, propagar, arquivar, comunicar, usar
+                particularmente ou publicamente as imagens, vídeos, texos, áudios, e qualquer outro conteúdo que inserir
+                em seus anúncios e ou através de outras ferramentas do site incluindo outros meios os quais o BidCompras
+                tem parceria ou contratações administrados ou não pelo portal. </div>
+
+            <h5 class="mt-3">DISPOSIÇÕES GERAIS</h5>
+
+            <div class="col-lg"><strong>Modificações.</strong> Os T&C regem as relações o Site e o Usuário. Sempre
+                poderão haver modificações destas condições e políticas, então o usuário fica responsável por averiguar
+                sobre as condições regularmente, ainda que o Site divulgue mudanças ou solicite novos aceites destes
+                termos eletronicamente. Na não concordância destas condições o usuário tem a opção de não continuar a
+                usar a plataforma.</div>
+
+            <div class="col-lg"><strong>Direito de exclusão e de solicitação de documentos.</strong> Como O BIDCOMPRAS
+                está sempre em cumprimento com as leis e os termos deste contrato, nos reservamos do direito de recusar
+                ou inabilitar o cadastro ou ainda retirar o acesso do usuário sem aviso prévio e sem a responsabilidade
+                de assumir danos ou perdas relativas à este cessão ou encerramento, mesmo que este esteja em cumprimento
+                dos termos gerais ou se o Site entender ser uma ameaça à sua estabilidade ou segurança ou ainda
+                solicitar documentos ou identificações do Usuário.</div>
+
+            <div class="col-lg"><strong>Em caso de remoção de conteúdo, modificações na plataforma de
+                    funcionamento</strong> e/ou suspensão ou cancelamento de cadastro de Usuário por desrespeito aos
+                presentes Termos, incluindo pelo atraso ou a falta de pagamento, os valores correspondentes às
+                funcionalidades contratadas serão cobrados integralmente e, caso o pagamento tenha ocorrido de forma
+                antecipada, não haverá reembolso de qualquer valor</div>
+
+            <div class="col-lg"><strong>Menores de idade.</strong> Menores de idade ou incapaz civil somente estão
+                autorizados a utilizar a Plataforma mediante prévia autorização de seus responsáveis legais. A restrição
+                de acesso somente está vinculado automaticamente aos menores de idade. </div>
+
+            <div class="col-lg"><strong>Duração e Término.</strong> O Site tem das ferramentas e funcionalidades sem
+                prazo de encerramento de atividades do Portal em contrário relativas à funcionalidades específicas. Sem
+                prejuízo das disposições anteriores, O BIDCOMPRAS se reserva o direito de decidir sobre o encerramento,
+                suspensão ou interrupção das funcionalidades oferecidas, podendo fazê-lo, unilateralmente e a qualquer
+                momento, sem a obrigatoriedade de prévio aviso aos Usuários, salvo se houver contraprestação financeira
+                com relação à funcionalidade alterada/cancelada. Nesta hipótese, O BIDCOMPRAS comunicará os Usuários que
+                tenham contratado as ferramentas pagas, através do endereço eletrônico cadastrado, com a antecedência
+                mínima de 5 (cinco) dias sobre a descontinuidade da ferramenta, de modo a garantir que os Usuários
+                estejam cientes do encerramento, suspensão ou interrupção a ser efetuada. Esta cláusula não se aplica à
+                disponibilidade dos anúncios, os quais expirarão nos termos da cláusula 3.3 ou outras.</div>
+
+            <div class="col-lg"><strong>Resolução de conflitos.</strong> Estes T&C serão interpretados de acordo com as
+                leis da República Federativa do Brasil. Todos os litígios oriundos do presente T&C ou com ele
+                relacionados serão submetidos preferencialmente à jurisdição do Foro da Comarca de Curitiba PR, podendo
+                ser submetidos ao foro do domicílio do Usuário, conforme disposto em Lei, ou, caso a demandante seja O
+                BIDCOMPRAS, esta poderá a seu critério iniciar a demanda no foro de sua escolha.</div>
+
+            <div class="col-lg"><strong>Comunicações.</strong> Em que a Lei exigir, o Site se compromete à informar o
+                usuário sobre suas utilidades e ferramentas ou outras por assim exigidas por meio eletrônico através do
+                e-mail pelo usuário informado ou fisicamente por escrito enviado ao endereço também informado pelo
+                usuário. Estes avisos via e-mail serão consideradas recebidas e lidas na data de transmissão deste
+                informativo. Já as notificações à serem entregues ao BidCompras deverão ser encaminhadas ao endereço
+                listado no preâmbulo deste via correios com aviso de recebimento ou serviço similar.
+
+                O Usuário tem o direito de retirar o consentimento para receber essas informações, mas o Site se reserva
+                o direito de cancelar sua conta.
+
+                Podemos ainda enviar-lhe comunicações com divulgações sobre promoções, pacotes, novidades ou outras
+                informações sobre O BIDCOMPRAS e/ou sobre empresas do mesmo grupo econômico do BIDCOMPRAS.</div>
+
+            <div class="col-lg"><strong>Renúncia e autonomia das disposições.</strong> Qualquer omissão ou tolerância na
+                exigência do fiel cumprimento dos termos e condições destes T&C, ou no exercício das prerrogativas dele
+                decorrentes, não constituirá novação ou renúncia, nem afetará o direito dO BIDCOMPRAS em exercê-lo a
+                qualquer tempo. Outrossim, a renúncia a qualquer desses direitos somente será válida se formalizada por
+                escrito, bem como a nulidade ou invalidade de qualquer previsão destes T&C não prejudicará a validade e
+                eficácia das demais disposições.</div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mb-sm-3">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/bidcompras/?eid=ARA9yB6Vv2LPXAHxeLWnMwwP15Z3wm3exEZz5dpD-LTncrez5FAfagJTuMAeWAQ6YE7FTVPyq0CgXqZh" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/bidcompras" target="_blank"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://instagram.com/bidcompras?igshid=1i1wtdzeuhvn6" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-3 mt-sm-3 text-center text-white">
+                    <p>Desenvolvido por: <u><a href="erro.html" class="mrl-1" target="_blank">AgreeCode</a></u>
+                    </p>
+                    <p class="h6">&copy Todos os direitos reservados. <u><a class="ml-1" href="fale-conosco.html">Fale conosco</a></u>
+                    <u><a href="termos.html" class="ml-1">Termos e condições</a></u> 
+                    <u><a href="politica-privacidade.html" class="ml-1">Política de Privacidade</a></u>
+                    <u><a href="erro.html" class="ml-1">FAQ</a></u>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ./Footer -->
+</body>
+
+</html>

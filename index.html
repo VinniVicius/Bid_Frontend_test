@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Google Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Estilo site(customizado) -->
+    <link rel="stylesheet" type="text/css" href="view/css/style.css">
+    <link type="text/css" rel="stylesheet" href="view/css/lightslider.css" />
+
+    <!-- Icone -->
+    <link rel="icon" href="view/img/bid.ico">
+
+    <!--AJAX-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+
+    <script src="vendor/jquery3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+
+    <!--AutoComplete-->
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+    <!-- mini-lightbox -->
+    <script src="view/js/mini-lightbox.min.js"></script>
+    <script>
+
+    </script>
+    <script>
+
+        MiniLightbox.customClose = function () {
+            var self = this;
+            self.img.classList.add("animated", "fadeOutDown");
+            setTimeout(function () {
+                self.box.classList.add("animated", "fadeOut");
+                setTimeout(function () {
+                    self.box.classList.remove("animated", "fadeOut");
+                    self.img.classList.remove("animated", "fadeOutDown");
+                    self.box.style.display = "none";
+                }, 500);
+            }, 500);
+            return false;
+        };
+
+        MiniLightbox.customOpen = function () {
+            this.box.classList.add("animated", "fadeIn");
+            this.img.classList.add("animated", "fadeInUp");
+        };
+        new MiniLightbox({
+            selector: ".wrapper img"
+            // the common container where the images are appended
+            , delegation: "html"
+        });
+    </script>
+    <style>
+        .textinho {
+            color: rgb(247, 154, 23);
+            padding: 0px 0px;
+            text-align: center;
+            width: 20%;
+            display: block;
+            margin-top: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 500;
+            /*visibility: hidden;*/
+        }
+
+        @media only screen and (min-width: 700px) {
+            .textinho {
+                width: 8%;
+            }
+        }
+    </style>
+    <title>Início - BIDCompras</title>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="modalProposta" tabindex="-1" role="dialog" aria-labelledby="modalPropostaLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row mx-auto">
+                        <h5 class="modal-title" id="modalPropostaLabel">Título anúncio</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="formControlOferta">Descrição oferta</label>
+                            <textarea class="form-control" id="formControlOferta" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="mr-auto" href="#product_view" data-toggle="modal" data-target="#product_view"
+                            data-dismiss="modal"><i class="fa fa-info-circle"></i> Detalhes do anúncio</a>
+                        <button type="submit" class="btn btn-primary">Enviar proposta</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--/Modal -->
+    <!-- Detailed product (modal) -->
+    <div class="modal fade product_view" id="product_view">
+        <!-- id do Modal de detalhes-produto -->
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title float-left" id="titulo_modal"></h3>
+                    <a href="#" data-dismiss="modal" class="float-right"><i class="fas fa-times-circle"
+                            style="font-size: 24px;"></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-10 product_content">
+                            <h4 id="sub_titulo" class="card-subtitle mb-2 mx-2 text-muted"></h4>
+                            <div class="col mx-auto">
+                                <p id="descriao_anun" class="h5"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- Footer do modal, data de criação e ETC -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Detailed product (modal) -->
+    <!-- Início cabeçalho -->
+    <header>
+        <!-- Navbar topo -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-white m-0">
+            <div class="container-fluid maxWidth">
+                <a href="index.html" class="navbar-brand">
+                    <img class="img-fluid" src="view/img/AF_bid_compras_logo.png">
+                </a>
+
+                <!--<p class="textinho">
+                    
+                </p>-->
+
+                <button class="bg-warning navbar-toggler custom-toggler mr-3" data-toggle="collapse"
+                    data-target="#nav-principal">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="nav-principal">
+                    <!-- Search form -->
+                    <div class="mx-auto pesquisar-bar" style="width: 60%;">
+                        <div class="input-group align-items-center">
+                            <a href="index.html"><i class="material-icons pt-2 mr-2">home</i></a>
+                            <input id="pesquisar" type="text" class="form-control"
+                                placeholder="Busque pelos anúncios dos compradores...">
+                            <div class="input-group-append">
+                                <button id="btnPesquisar" class="btn btn-warning" type="button">
+                                    <i class="fa fa-search mr-2"></i>Pesquisar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Search form -->
+                    <!-- Itens da navbar topo -->
+                    <ul class="navbar-nav mx-3 d-flex align-items-center">
+                        <li class="nav-item mx-1">
+                            <a href="view/login.php" class="btn btn-outline-warning align-top-items">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="text-dark btn btn-warning"
+                                style="width: 10.5rem; height: 3.5rem; line-height: 2.5rem;"
+                                onclick="redirecionarParaLoginBtnQueroComprar();">Quero
+                                Comprar</button>
+                        </li>
+                    </ul>
+                    <!--/Itens da navbar topo -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/fim Cabeçalho-->
+    <div class="container-fluid maxWidth">
+        <!-- Wrapper | (Conteúdo) -->
+        <div class="wrapper col-lg-12 px-5">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sticky">
+                    <div class="text-dark sidebar-header">
+                        <h3>Categorias</h3>
+                        <!-- Sidebar Header-->
+                    </div>
+                    <ul class="list-unstyled ul_cat">
+                        <p>
+                            <a class="btn btn-transparent d-flex align-items-center" data-toggle="collapse"
+                                href="#collapseExample" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <span class="material-icons mr-3">
+                                    filter_list
+                                </span>Filtro
+                            </a>
+                        </p>
+                        <li>
+                            <div class="collapse border-top border-warning" id="collapseExample">
+                                <div class="col-lg m-0 p-0">
+                                    <div class="form d-inline-block w-100">
+                                        </form>
+                                        <div class="form-group m-2">
+                                            <label for="DDD" class="d-block">Cidade:</label>
+                                            <div class="row align-items-center">
+                                                <input type="text" id="inputDDD" list="regiao"
+                                                    class="form-control d-inline w-75 ml-3 mr-2"
+                                                    placeholder="Ex: São Paulo" aria-describedby="passwordHelpInline">
+                                                <button class="btn btn-light" id="botaoDDD">
+                                                    <i class="fa fa-arrow-circle-right fa-lg"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Categoria elemento -->
+                        <!-- Título categoria label -->
+                        <div style="width: 100%;">
+                            <ul class="list-group" id="macro">
+
+                            <li class=""><a href="#" class="" id="macro_4" onclick="pegaMacro(4, 'view/resultado-pesquisa.html?id=4')">Agricultura e Pecuária<div class="d-inline float-right" id="icone_macro_4"><i class="material-icons">agriculture</i></div></a></li><li class=""><a href="#" class="" id="macro_12" onclick="pegaMacro(12, 'view/resultado-pesquisa.html?id=12')">Animais e Acessórios<div class="d-inline float-right" id="icone_macro_12"><i class="material-icons">pets</i></div></a></li><li class=""><a href="#" class="" id="macro_10" onclick="pegaMacro(10, 'view/resultado-pesquisa.html?id=10')">Artigos Infantis<div class="d-inline float-right" id="icone_macro_10"><i class="material-icons">child_care</i></div></a></li><li class=""><a href="#" class="" id="macro_5" onclick="pegaMacro(5, 'view/resultado-pesquisa.html?id=5')">Autos e Peças<div class="d-inline float-right" id="icone_macro_5"><i class="material-icons">commute</i></div></a></li><li class=""><a href="#" class="" id="macro_8" onclick="pegaMacro(8, 'view/resultado-pesquisa.html?id=8')">Casa e Eletrodomésticos<div class="d-inline float-right" id="icone_macro_8"><i class="material-icons">king_bed</i></div></a></li><li class=""><a href="#" class="" id="macro_7" onclick="pegaMacro(7, 'view/resultado-pesquisa.html?id=7')">Eletrônicos e Informática<div class="d-inline float-right" id="icone_macro_7"><i class="material-icons">computer</i></div></a></li><li class=""><a href="#" class="" id="macro_9" onclick="pegaMacro(9, 'view/resultado-pesquisa.html?id=9')">Esporte e Lazer<div class="d-inline float-right" id="icone_macro_9"><i class="material-icons">sports_soccer</i></div></a></li><li class=""><a href="#" class="" id="macro_2" onclick="pegaMacro(2, 'view/resultado-pesquisa.html?id=2')">Ferramentas e Construção<div class="d-inline float-right" id="icone_macro_2"><i class="material-icons">build</i></div></a></li><li class=""><a href="#" class="" id="macro_6" onclick="pegaMacro(6, 'view/resultado-pesquisa.html?id=6')">Imóveis<div class="d-inline float-right" id="icone_macro_6"><i class="material-icons">apartment</i></div></a></li><li class=""><a href="#" class="" id="macro_3" onclick="pegaMacro(3, 'view/resultado-pesquisa.html?id=3')">Indústria e Comércio<div class="d-inline float-right" id="icone_macro_3"><i class="material-icons">shopping_cart</i></div></a></li><li class=""><a href="#" class="" id="macro_11" onclick="pegaMacro(11, 'view/resultado-pesquisa.html?id=11')">Moda, Beleza e Saúde<div class="d-inline float-right" id="icone_macro_11"><i class="material-icons">face</i></div></a></li><li class=""><a href="#" class="" id="macro_13" onclick="pegaMacro(13, 'view/resultado-pesquisa.html?id=13')">Música, Arte e Cultura<div class="d-inline float-right" id="icone_macro_13"><i class="material-icons">music_note</i></div></a></li><li class=""><a href="#" class="" id="macro_1" onclick="pegaMacro(1, 'view/resultado-pesquisa.html?id=1')">Serviços<div class="d-inline float-right" id="icone_macro_1"><i class="material-icons">handyman</i></div></a></li></ul>
+                        </div>
+
+                        <!--/Categoria elemento -->
+                    </ul>
+                </div>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id="content">
+                <button type="button" onclick="menu__btn()" id="sidebarCollapse" class="btn btn-transparent navbar-btn">
+                    <span id="btn__menu" class="material-icons navbar-btn mr-2">menu</span> Categorias
+                </button>
+                <!-- row -->
+                <div class="row">
+                    <!-- container-fluid col-md-10 -->
+                    <div class="container-fluid col-lg m-0 p-0">
+
+
+                        <!--<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light mx-3 mb-2">
+                            <div class="container-fluid">
+                                
+                                <button class="btn btn-dark d-inline-block d-lg-none" type="button"
+                                    data-toggle="collapse" data-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <i class="fas fa-filter"></i>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <div class="row mr-auto p-2">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>-->
+
+                        <!-- Card structure -->
+                        <!-- anuncios -->
+
+                        <div id="anuncios" class="container-fluid">
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">Simulação CFD</h4>
+                                                        <!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#Turbina Tesla #CFD
+                                                            #Simulação </h6><!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso de um fornecedor de
+                                                            serviço para simulação de CFD para identificar comportamento
+                                                            de fluidos dentro de uma turbina tesla de 7 laminas. Faremos
+                                                            simulações para melhorias de performances. </p>
+                                                        <!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products0" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products0"
+                                                                        data-slide-to="1"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/Flow-Trajectories-in-Tesla-Turbine_Q320.jpg"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products0" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products0" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome:******* </small>
+                                                        <small class="text-muted px-2">Localização: 41 -
+                                                            Curitiba/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Serviços/Engenharia e
+                                                            Meio Ambiente/Mecânica e Elétrica</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 1</small><small
+                                                            class="text-muted px-2">Criado em 22/06/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-236"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+
+
+
+
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">Haste de Marcha Rural F75</h4>
+                                                        <!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#F75 #Rural #Ford
+                                                            #Original #Cambio 4 Marchas #Alavanca em cima </h6>
+                                                        <!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso da haste em "L"
+                                                            usada ou nova da montagem do câmbio 4 marchas da rural F75.
+                                                        </p><!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products1" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products1"
+                                                                        data-slide-to="1"></li>
+                                                                    <li data-target="#carousel-products1"
+                                                                        data-slide-to="2"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/IMG_0954.jpg"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                    <div class="carousel-item zoom-in-cursor">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/meus documentos 020.jpg">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products1" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products1" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome: DUBARROSO</small>
+                                                        <small class="text-muted px-2">Localização: 41 -
+                                                            Curitiba/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Autos e
+                                                            Peças/Aviação/Outros</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 1</small><small
+                                                            class="text-muted px-2">Criado em 20/06/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-235"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+
+
+
+
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">Gerador Elétrico 5 KVA ou menor</h4>
+                                                        <!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#Partida Automática #à
+                                                            Gasolina #Bivolt #4 tempos </h6><!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso de um Gerador à
+                                                            gasolina pequeno</p><!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products2" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products2"
+                                                                        data-slide-to="1"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/Sem título.png"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products2" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products2" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome: DUBARROSO</small>
+                                                        <small class="text-muted px-2">Localização: 41 -
+                                                            Curitiba/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Ferramentas e
+                                                            Construção/Limpeza/Limpeza de Móveis</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 1</small><small
+                                                            class="text-muted px-2">Criado em 13/04/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-234"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+
+
+
+
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">RODAS DAYTONA 15'</h4>
+                                                        <!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#Daytona #Mangels
+                                                            #15x10 #Negativa </h6><!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso de rodas mangels
+                                                            para colocar num willys. 15x10 não precisa de dreadlock.
+                                                            Pode ser usadas. Gosto das mais negativas. Aquelas muito
+                                                            "pra fora" o pneu pega no chassi quando manobra.... obrigado
+                                                        </p><!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products3" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products3"
+                                                                        data-slide-to="1"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/daytona.jpg"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products3" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products3" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome:******* </small>
+                                                        <small class="text-muted px-2">Localização: 45 -
+                                                            Cascavel/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Eletrônicos e
+                                                            Informática/Games/Fliperama e Arcade</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 0</small><small
+                                                            class="text-muted px-2">Criado em 07/02/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-230"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+
+
+
+
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">BFGOODRICH 33/10,5/15</h4>
+                                                        <!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#pneus #Mud #BF
+                                                            #Bfgoodrich </h6><!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso de um conjunto de
+                                                            pneus usados Mud terrain da Bfgoodrich aro 15. Melhor os
+                                                            modelos 33/10,5... Aguardo pessoal que tenha interesse de me
+                                                            vender. Frete por minha conta.</p><!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products4" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products4"
+                                                                        data-slide-to="1"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/mud.jpg"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products4" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products4" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome:******* </small>
+                                                        <small class="text-muted px-2">Localização: 45 -
+                                                            Cascavel/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Eletrônicos e
+                                                            Informática/Games/Fliperama e Arcade</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 0</small><small
+                                                            class="text-muted px-2">Criado em 07/02/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-229"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+
+
+
+
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">Alavanca De Câmbio 4 Marchas Câmbio
+                                                            Em Cima Rural E F-75 4m</h4><!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#Cambio #Alavanca
+                                                            #Manual em cima #Quatro marchas #Manopla </h6>
+                                                        <!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso de alavanca manual
+                                                            de 4 marchas em cima para rural f75. Estou remontando o
+                                                            conjunto inteiro que havia sido retirado para colocar o
+                                                            câmbio da marcha no chão. Preciso dela completa... se não
+                                                            tiver pode me ofertar por peça que monto por conta.</p>
+                                                        <!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products5" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products5"
+                                                                        data-slide-to="1"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/alavanca.jpg"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products5" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products5" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome:******* </small>
+                                                        <small class="text-muted px-2">Localização: 45 -
+                                                            Cascavel/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Eletrônicos e
+                                                            Informática/Câmeras/Drones</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 0</small><small
+                                                            class="text-muted px-2">Criado em 05/02/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-228"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+
+
+
+
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">Maquina de Solda </h4>
+                                                        <!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#Solda #Eletrodo </h6>
+                                                        <!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso de uma máquina de
+                                                            solda de eletrodo de pequena amperagem para trabalhos hobby.
+                                                            Se alguém tiver uma para venda e quiser negociar. Se for
+                                                            estas Tig e eletrodo junto melhor ainda. </p>
+                                                        <!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products6" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products6"
+                                                                        data-slide-to="1"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/solda.png"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products6" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products6" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome:******* </small>
+                                                        <small class="text-muted px-2">Localização: 44 -
+                                                            Umuarama/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Ferramentas e
+                                                            Construção/Limpeza/Limpeza de Pedras</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 0</small><small
+                                                            class="text-muted px-2">Criado em 04/02/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-227"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+
+
+
+
+                            <!-- row mb-3 -->
+                            <div class="row mb-3">
+                                <div class="col-md-12 mt-3">
+                                    <!-- Estrutura do Card -->
+                                    <!-- card card-hover -->
+                                    <div class="card card-hover mb-3">
+                                        <div class="card-horizontal d-flex flex-column">
+                                            <div class="row px-4 py-2 d-flex align-items-center">
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-8 card__anun-size">
+                                                    <!-- Coluna lado esquerdo -->
+                                                    <div class="card-body p-2 d-flex flex-column align-items-start">
+                                                        <h4 class="card-title mb-2">Serviço de Usinagem - Triturador
+                                                            Schredder</h4><!-- Título do card -->
+                                                        <h6 class="card-subtitle mb-2 text-muted">#Triturador #Schredder
+                                                            #Usinagem </h6><!-- subtítulo do card -->
+                                                        <p class="card-text limit-text-size">Preciso de um serviço de
+                                                            Usinagem para produzir um triturador já desenhado. Veja na
+                                                            imagem o modelo e medidas básicas... projeto completo passo
+                                                            se tivermos alguma negociação avançada.. obrigado</p>
+                                                        <!-- Texto do card -->
+                                                    </div>
+                                                </div>
+                                                <!--/Coluna lado esquerdo -->
+                                                <!-- 'col-md-* + card__anun-size' para o breakpoint dos dispositivos móveis -->
+                                                <div class="col-md-4 card__anun-size">
+                                                    <!-- Coluna da imagem -->
+                                                    <div
+                                                        class="col-lg-4 mx-auto d-flex justify-content-center pattern-img-dim">
+                                                        <div class="align-items-center">
+                                                            <!-- IMG Carousel -->
+                                                            <div id="carousel-products7" class="carousel slide"
+                                                                data-ride="carousel" data-interval="0"
+                                                                style="width:145px; height:110px;">
+                                                                <!-- Dot/Bolinhas navegação -->
+                                                                <ol style="cursor: pointer;"
+                                                                    class="carousel-indicators carousel-product p-1 m-1">
+                                                                    <li data-target="#carousel-products7"
+                                                                        data-slide-to="1"></li>
+                                                                </ol>
+                                                                <!--/Dot/Bolinhas navegação -->
+                                                                <!-- Imagens -->
+                                                                <div class="carousel-inner"
+                                                                    style="width:145px; height:110px;">
+                                                                    <div class="carousel-item zoom-in-cursor active">
+                                                                        <img class="img-thumbnail pattern-img-dim mx-auto d-block"
+                                                                            src="../view/imagem-anuncio/116/montado.jpg"
+                                                                            alt="Imagem do anúncio">
+                                                                    </div>
+                                                                </div>
+                                                                <!--/Imagens -->
+                                                                <!-- Botão/Setas -->
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carousel-products7" role="button"
+                                                                    data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Anterior</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carousel-products7" role="button"
+                                                                    data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Próximo</span>
+                                                                </a>
+                                                                <!--/Botão/Setas -->
+                                                            </div>
+                                                            <!--/IMG Carousel -->
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/Coluna da imagem -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-md m-0 p-0 card__footer__item">
+                                                    <div class="d-inline-flex flex-wrap flex-row p-2"><small
+                                                            class="text-muted px-2">Nome:******* </small>
+                                                        <small class="text-muted px-2">Localização: 41 -
+                                                            Curitiba/PR</small>
+                                                        <small class="text-muted px-2">Cetegoria: Ferramentas e
+                                                            Construção/Portas, Janelas e Portões/Batentes e
+                                                            Guarnições</small>
+                                                        <div class="w-100"></div>
+                                                        <small class="text-muted px-2">R$: </small>
+                                                        <small class="text-muted px-2">Quantidade: 0</small><small
+                                                            class="text-muted px-2">Criado em 04/02/2020</small>
+                                                    </div>
+                                                </div>
+                                                <div id="op"
+                                                    class="col-md m-0 p-0 d-flex flex-lg-row flex-sm-column flex-wrap justify-content-lg-around justify-content-sm-between align-items-center card__footer__links">
+                                                    <a class="btn btn-light" style="cursor: pointer;"
+                                                        href="/view/anuncio-produto-226"><i
+                                                            class="fa fa-info-circle mr-1"></i>Ver Anúncio</a>
+                                                    <a href="#" id="usuario-nao-cadastrado"
+                                                        onclick="redirecionarParaLogin();" class="btn btn-light"><i
+                                                            class="far fa-paper-plane"></i> Contatar Comprador</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/card card-hover-->
+                                    <!--/Estrutura do Card -->
+                                </div>
+                            </div>
+                            <!--/row mb-3-->
+                        </div>
+                        <!--/anuncios -->
+                        <!-- Botões de navagação -->
+                        <div class="col-lg-auto mb-3">
+                            <div class="d-flex justify-content-center mx-auto">
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-warning" id="anterior">&lsaquo; Anterior</button>
+                                    <div class="btn btn-outline-warning"><span id="numeracao"></span></div>
+                                    <button class="btn btn-warning" id="proximo">Próximo &rsaquo;</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Botões de navagação -->
+                    </div>
+                    <!--/container-fluid col-md-10 -->
+                    <!-- col-lg-2 -->
+                    <div class="col-lg-3 caixa-ad">
+                        <!--<div class="item pirate d-none d-sm-block">
+                            <img src="view/img/AF_bid_compras_banner_trio comex.png"  alt="Anúncio de Trio Comex">
+                          </div>-->
+                    </div>
+                    <!--/col-lg-2 -->
+                </div>
+                <!--/row -->
+            </div>
+        </div>
+        <!--/Wrapper | (Conteúdo) -->
+    </div>
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mb-sm-3">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a
+                                href="https://www.facebook.com/bidcompras/?eid=ARA9yB6Vv2LPXAHxeLWnMwwP15Z3wm3exEZz5dpD-LTncrez5FAfagJTuMAeWAQ6YE7FTVPyq0CgXqZh"
+                                target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/bidcompras" target="_blank"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://instagram.com/bidcompras?igshid=1i1wtdzeuhvn6"
+                                target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-3 mt-sm-3 text-center text-white">
+                    <p>Desenvolvido por: <u><a href="view/erro.html" class="mrl-1" target="_blank">AgreeCode</a></u>
+                    </p>
+                    <p class="h6">&copy Todos os direitos reservados. <u><a class="ml-1"
+                                href="view/fale-conosco.html">Fale conosco</a></u>
+                        <u><a href="view/termos.html" class="ml-1">Termos e condições</a></u>
+                        <u><a href="view/politica-privacidade.html" class="ml-1">Política de Privacidade</a></u>
+                        <u><a href="view/erro.html" class="ml-1">FAQ</a></u>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ./Footer -->
+
+    <!--JavaScript Controller-->
+    <script>
+        var ID = null;
+        var categoriaG = null;
+        var subG = null;
+        var dddG = null;
+    </script>
+
+    <script src="controller/js/gerar-card-anuncio.js"></script>
+    <script src="controller/js/Anuncio/gerar-anuncio.js"></script>
+    <script src="controller/js/Anuncio/utils/add-evento-pagincao.js"></script>
+    <script src="controller/js/Anuncio/utils/verifica-paginacao.js"></script>
+    <script src="controller/js/retornar-anuncios.js"></script>
+    <script src="controller/js/cadastro-categoria-usuario.js"></script>
+    <script src="controller/js/retorna-descricao.js"></script>
+    <script src="controller/js/usuario-nao-cadastrado.js"></script>
+    <script src="controller/js/retorna-macro-home.js"></script>
+    <script src="controller/js/pesquisar.js"></script>
+    <script src="controller/js/busca-ddd.js"></script>
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript (Opcional) -->
+    <script src="view/js/lightslider.js"></script>
+    <script src="view/js/collapse-bar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+</body>
+
+</html>
